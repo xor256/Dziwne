@@ -41,4 +41,3 @@ extern "C" void Init_Dziwne()
  rb_define_alloc_func(cDziwne,t_allocate);
  rb_define_method(cDziwne, "cosik", (ruby_method*) &t_cosik, 0);
 }
-/* zrobic obiekt, polskie znaki w funkcjach, sprawdzic czy to obiekt , jak sprawdzic czy jest biblioteka*/
