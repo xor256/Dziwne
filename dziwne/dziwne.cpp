@@ -13,12 +13,13 @@ void t_free(struct moje *m)
  free(m);
 }
 
-static VALUE
-t_allocate(VALUE obj)
+static VALUE t_allocate(VALUE obj)
 {
 struct moje *m = (struct moje*)malloc(sizeof(struct moje));
  if( m == NULL )
    rb_raise(rb_eNoMemError, "Brakuje pamięci (%ld bajty)", sizeof(struct moje));
+
+ m->x = 42;
 
 return Data_Wrap_Struct(obj,NULL,t_free,m);
 }
@@ -29,6 +30,7 @@ extern "C" VALUE t_cosik()
 
 return str;
 }
+
 
 
 VALUE cDziwne;
